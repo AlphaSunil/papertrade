@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import { Newss } from "../Config/Api";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { NewsApi } from "../Config/Api";
+import Slider from "react-slick";
+import moment from "moment";
+import { PuffLoader } from "react-spinners";
 
 const News = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+
     responsive: [
       {
         breakpoint: 700,
@@ -20,36 +25,36 @@ const News = () => {
       },
     ],
   };
+  const [isloading, setIsLoading] = useState(false);
   const [healines, setHeadlines] = useState([]);
-  const fetchNews = async () => {
-    const { data } = await axios.get(Newss);
-    setHeadlines(data.articles);
+  const fetchNewsApis = async () => {
+    setIsLoading(true);
+    const { data } = await axios.get(NewsApi);
+    setHeadlines(data.news);
+    setIsLoading(false);
   };
+
   useEffect(() => {
-    fetchNews();
+    fetchNewsApis();
   }, []);
 
   const articles = healines.map((article) => {
-    let newsApiDate = article.publishedAt;
-
-    let timestamp = new Date(newsApiDate).getTime();
-    let Day = new Date(timestamp).getDate();
-    let Month = new Date(timestamp).getMonth() + 1;
-    let Year = new Date(timestamp).getFullYear();
-    let OurNewDateFormat = `${Day}/${Month}/${Year}`;
+    const publishedAt = moment(article.published).format(
+      `MMMM Do YYYY, h:mm a `
+    );
 
     return (
-      <div className="flex justify-center">
-        <div className="flex flex-col  lg:flex-row md:max-w-xxl rounded-lg  bg-white shadow-lg">
+      <div key={article.id} className="flex justify-center ">
+        <div className="flex flex-col h-[42rem]  md:h-auto lg:h-auto  lg:flex-row md:max-w-xxl md:shadow-lg lg:shadow-lg  bg-white ">
           <img
-            className=" w-full h-96 md:h-90 object-cover md:w-[50rem] rounded-t-lg md:rounded-none md:rounded-l-lg"
+            className=" w-full h-96 md:h-90 object-cover   "
             src={
-              article.urlToImage ||
+              article.image ||
               `https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/450px-No_image_available.svg.png`
             }
             alt=""
           />
-          <div className="p-6 flex flex-col justify-start ">
+          <div className="p-2 md:p-5 lg-p-5 flex flex-col justify-start w-full ">
             <h5 className="text-gray-900 text-xl font-medium mb-2">
               {article.title}
             </h5>
@@ -58,7 +63,7 @@ const News = () => {
             </p>
             <div className="flex justify-between">
               <p className="text-gray-600 text-xs">
-                Published on: {OurNewDateFormat}
+                Published on: {publishedAt}
               </p>
               <p className="text-gray-600 text-xs">
                 Author: {article.author || "unknown"}
@@ -71,8 +76,9 @@ const News = () => {
   });
 
   return (
-    <div className="mt-5 mx-10  ">
-      <Slider {...settings}>{articles}</Slider>
+    <div className=" overflow-hidden md:overflow-visible lg:overflow-visible md:mt-2 md:mx-10 mb-2  md:shadow-none lg:shadow-none shadow-lg ">
+      {!isloading && <Slider {...settings}>{articles}</Slider>}
+      {isloading && <PuffLoader className="mx-auto my-[10rem]" />}
     </div>
   );
 };

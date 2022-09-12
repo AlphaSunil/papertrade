@@ -7,12 +7,13 @@ import CryptoContext from "./Config/CryptoContext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <HashRouter>
     <CryptoContext>
       <App />
     </CryptoContext>
-  </React.StrictMode>
+  </HashRouter>
 );
