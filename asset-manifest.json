@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/papertrade/static/css/main.c267a61b.css",
-    "main.js": "/papertrade/static/js/main.f982fc41.js",
+    "main.js": "/papertrade/static/js/main.d18c4ffb.js",
     "static/media/slick.svg": "/papertrade/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/papertrade/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/papertrade/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/papertrade/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/papertrade/index.html",
     "main.c267a61b.css.map": "/papertrade/static/css/main.c267a61b.css.map",
-    "main.f982fc41.js.map": "/papertrade/static/js/main.f982fc41.js.map"
+    "main.d18c4ffb.js.map": "/papertrade/static/js/main.d18c4ffb.js.map"
   },
   "entrypoints": [
     "static/css/main.c267a61b.css",
-    "static/js/main.f982fc41.js"
+    "static/js/main.d18c4ffb.js"
   ]
 }
