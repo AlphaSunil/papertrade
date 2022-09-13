@@ -16,13 +16,13 @@ const Header = () => {
           </h1>
         </Link>
         <div>
-          <select
+          {/* <select
             value={currency}
             onChange={(event) => setCurrency(event.target.value)}
           >
             <option>USD</option>
             <option>INR</option>
-          </select>
+          </select> */}
         </div>
         <div>
           <button className="hover:font-bold">Login</button>
