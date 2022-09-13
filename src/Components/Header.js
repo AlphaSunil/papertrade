@@ -27,7 +27,7 @@ const Header = () => {
         <div>
           <button className="hover:font-bold">Login</button>
           <span>/</span>
-          <button className="hover:font-bold">Sign up</button>
+          <button className="hover:font-bold">Sign up.</button>
         </div>
         <div>
           <CgDarkMode size={30} />
