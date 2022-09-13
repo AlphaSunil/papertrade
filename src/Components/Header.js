@@ -16,18 +16,18 @@ const Header = () => {
           </h1>
         </Link>
         <div>
-          {/* <select
+          <select
             value={currency}
             onChange={(event) => setCurrency(event.target.value)}
           >
             <option>USD</option>
             <option>INR</option>
-          </select> */}
+          </select>
         </div>
         <div>
           <button className="hover:font-bold">Login</button>
           <span>/</span>
-          <button className="hover:font-bold">Sign up.</button>
+          <button className="hover:font-bold">Sign up</button>
         </div>
         <div>
           <CgDarkMode size={30} />
