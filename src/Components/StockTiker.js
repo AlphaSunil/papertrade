@@ -69,7 +69,7 @@ const StockTiker = () => {
   }, [currency]);
 
   return (
-    <div className="bg-black h-7 flex items-center justify-center">
+    <div className="bg-black h-7 flex items-center justify-center ">
       {!isLoading && (
         <AliceCarousel
           mouseTracking

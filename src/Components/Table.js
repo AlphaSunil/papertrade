@@ -37,18 +37,6 @@ const Table = () => {
     setSearchItem(data);
   };
 
-  const tableHead = (
-    <div
-      id="table-head"
-      className="flex   md:mx-10 justify-between my-5  md:my-10 font-bold border-b text-lg md:xl lg:xxl"
-    >
-      <div className="w-full text-center">Coin</div>
-      <div className="w-full text-center">Price</div>
-      <div className="w-full text-center">24h Change</div>
-      <div className="w-full text-center">Market Cap</div>
-    </div>
-  );
-
   const switcher = () => {
     if (searchItem === "") {
       return coins;
@@ -93,8 +81,15 @@ const Table = () => {
 
   return (
     <div>
-      <Search searchData={getSearchData} />
-      {tableHead}
+      <div id="toTop">
+        <Search searchData={getSearchData} />
+      </div>
+      <div className="flex md:sticky md:top-0 bg-white md:mx-10 justify-between my-5  md:my-10 font-bold border-b text-lg md:xl lg:xxl">
+        <div className="w-full text-center">Coin</div>
+        <div className="w-full text-center">Price</div>
+        <div className="w-full text-center">24h Change</div>
+        <div className="w-full text-center">Market Cap</div>
+      </div>
       {!isloading && tableBody}
       {isloading && <FadeLoader className="mx-auto " />}
       {!isloading && searchedCoin.length === 0 && (

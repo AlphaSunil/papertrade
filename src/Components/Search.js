@@ -10,7 +10,7 @@ const Search = ({ searchData }) => {
   return (
     <div className="flex mx-5 md:mx-10 mt-20  justify-center  text-center">
       <div className="font-bold text-4xl w-full">
-        <label className="form-label inline-block mb-2 text-gray-700 drop-shadow-md">
+        <label className="form-label inline-block mb-2 text-blacl drop-shadow-md">
           Search Crypto's
         </label>
         <input

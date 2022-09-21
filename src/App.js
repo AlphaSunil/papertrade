@@ -5,7 +5,9 @@ import Homepage from "./Pages/Homepage";
 import { Routes, Route } from "react-router-dom";
 import { Fragment } from "react";
 import CoinPage from "./Components/CoinPage";
+
 function App() {
+  console.log(process.env);
   return (
     <Fragment>
       <Header />

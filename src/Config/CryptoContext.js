@@ -13,10 +13,20 @@ const CryptoContext = (props) => {
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
-
+  const [SignUpModal, setSignUpModal] = useState(false);
+  const [loginModal, setLoginInModal] = useState(false);
   return (
     <Crypto.Provider
-      value={{ currency, symbol, setCurrency, numberWithCommas }}
+      value={{
+        currency,
+        symbol,
+        setCurrency,
+        numberWithCommas,
+        setLoginInModal,
+        setSignUpModal,
+        loginModal,
+        SignUpModal,
+      }}
     >
       {props.children}
     </Crypto.Provider>

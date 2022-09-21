@@ -70,8 +70,8 @@ const CoinPage = () => {
                 <h2
                   className={
                     coin.market_data.price_change_percentage_24h >= 0
-                      ? "text-green-400"
-                      : "text-red-400"
+                      ? "text-green-700"
+                      : "text-red-700"
                   }
                 >
                   {coin.market_data.price_change_percentage_24h >= 0

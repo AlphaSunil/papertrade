@@ -10,4 +10,4 @@ export const HistoricalChart = (id, days, currency) =>
 export const TrendingCoins = (currency) =>
   `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=gecko_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h`;
 
-export const NewsApi = `https://api.currentsapi.services/v1/latest-news?apiKey=THj-F6kECRrzOy_D1q0Hp7nzKjAj3CSUmlCJHe1Jz99VvGfV&category=economy&country=in&language=en`;
+export const NewsApi = `https://api.currentsapi.services/v1/latest-news?apiKey=${process.env.REACT_APP_NEWS}&category=business&country=in&language=en`;

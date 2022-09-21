@@ -15,10 +15,10 @@ const Pagination = ({
 
   return (
     <Link
-      to="table-head"
+      to="toTop"
       spy={true}
       smooth={true}
-      offset={-150}
+      offset={-100}
       duration={500}
       className="flex justify-between items-center md:mx-10 lg:mx-10 mx-5  "
     >
